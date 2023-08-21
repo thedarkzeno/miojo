@@ -1,0 +1,13 @@
+accelerate launch pretrain.py \
+    --src_model_name_or_path checkpoints/dummy_llama \
+    --tgt_model_name_or_path checkpoints/dummy_llama \
+    --src_train_file data/en.txt \
+    --tgt_train_file data/vi.txt \
+    --output_dir ./checkpoints/dummy_aligned \
+    --num_train_epochs 1 \
+    --per_device_train_batch_size 8 \
+    --per_device_eval_batch_size 8 \
+    --gradient_accumulation_steps 8 \
+    --preprocessing_num_workers 12 \
+    --learning_rate 1e-4 \
+    --block_size 256 
